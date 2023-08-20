@@ -19,7 +19,7 @@
 
 int main(){
 
-	u8 rec_Data[6];
+
 
 	u8 buffer[] = {0x00,0x6B,0x61,0x72,0x69,0x6D};
 	u8 len = 6;
