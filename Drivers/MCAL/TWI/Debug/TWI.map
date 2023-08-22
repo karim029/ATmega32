@@ -405,7 +405,7 @@ LOAD c:/users/karim/desktop/embedded systems/imt_embedded_system_course/material
                 0x00800078        0x8 ./DIO_Program.o
  *(.rodata)
  *(.rodata*)
- .rodata.C.0.1341
+ .rodata.C.0.1340
                 0x00800080        0x6 ./main.o
  *(.gnu.linkonce.d*)
                 0x00800086                . = ALIGN (0x2)
@@ -485,17 +485,17 @@ LOAD c:/users/karim/desktop/embedded systems/imt_embedded_system_course/material
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x12b4
+.stab           0x00000000     0x12a8
  *(.stab)
  .stab          0x00000000      0x564 ./DIO_Program.o
  .stab          0x00000564      0xaec ./TWI_Program.o
                                 0xb64 (size before relaxing)
- .stab          0x00001050      0x264 ./main.o
-                                0x4bc (size before relaxing)
+ .stab          0x00001050      0x258 ./main.o
+                                0x4b0 (size before relaxing)
 
-.stabstr        0x00000000      0xe48
+.stabstr        0x00000000      0xe38
  *(.stabstr)
- .stabstr       0x00000000      0xe48 ./DIO_Program.o
+ .stabstr       0x00000000      0xe38 ./DIO_Program.o
 
 .stab.excl
  *(.stab.excl)

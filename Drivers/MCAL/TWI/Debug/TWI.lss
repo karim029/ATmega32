@@ -9,27 +9,27 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   2 .bss          00000011  00800086  00800086  00001a50  2**0
                   ALLOC
-  3 .stab         000012b4  00000000  00000000  00001a50  2**2
+  3 .stab         000012a8  00000000  00000000  00001a50  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000e48  00000000  00000000  00002d04  2**0
+  4 .stabstr      00000e38  00000000  00000000  00002cf8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 00000140  00000000  00000000  00003b4c  2**0
+  5 .debug_aranges 00000140  00000000  00000000  00003b30  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_pubnames 00000170  00000000  00000000  00003c8c  2**0
+  6 .debug_pubnames 00000170  00000000  00000000  00003c70  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_info   00001c49  00000000  00000000  00003dfc  2**0
+  7 .debug_info   00001c49  00000000  00000000  00003de0  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 00000eeb  00000000  00000000  00005a45  2**0
+  8 .debug_abbrev 00000eeb  00000000  00000000  00005a29  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   00000dad  00000000  00000000  00006930  2**0
+  9 .debug_line   00000dad  00000000  00000000  00006914  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_frame  00000160  00000000  00000000  000076e0  2**2
+ 10 .debug_frame  00000160  00000000  00000000  000076c4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    0000028d  00000000  00000000  00007840  2**0
+ 11 .debug_str    0000028d  00000000  00000000  00007824  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_loc    000007ce  00000000  00000000  00007acd  2**0
+ 12 .debug_loc    000007ce  00000000  00000000  00007ab1  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000050  00000000  00000000  0000829b  2**0
+ 13 .debug_ranges 00000050  00000000  00000000  0000827f  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -3434,46 +3434,46 @@ int main(){
     17ae:	cf 93       	push	r28
     17b0:	cd b7       	in	r28, 0x3d	; 61
     17b2:	de b7       	in	r29, 0x3e	; 62
-    17b4:	a0 97       	sbiw	r28, 0x20	; 32
+    17b4:	6a 97       	sbiw	r28, 0x1a	; 26
     17b6:	0f b6       	in	r0, 0x3f	; 63
     17b8:	f8 94       	cli
     17ba:	de bf       	out	0x3e, r29	; 62
     17bc:	0f be       	out	0x3f, r0	; 63
     17be:	cd bf       	out	0x3d, r28	; 61
 
-	u8 rec_Data[6];
+
 
 	u8 buffer[] = {0x00,0x6B,0x61,0x72,0x69,0x6D};
     17c0:	ce 01       	movw	r24, r28
-    17c2:	46 96       	adiw	r24, 0x16	; 22
-    17c4:	9d 8f       	std	Y+29, r25	; 0x1d
-    17c6:	8c 8f       	std	Y+28, r24	; 0x1c
+    17c2:	40 96       	adiw	r24, 0x10	; 16
+    17c4:	9f 8b       	std	Y+23, r25	; 0x17
+    17c6:	8e 8b       	std	Y+22, r24	; 0x16
     17c8:	e0 e8       	ldi	r30, 0x80	; 128
     17ca:	f0 e0       	ldi	r31, 0x00	; 0
-    17cc:	ff 8f       	std	Y+31, r31	; 0x1f
-    17ce:	ee 8f       	std	Y+30, r30	; 0x1e
+    17cc:	f9 8f       	std	Y+25, r31	; 0x19
+    17ce:	e8 8f       	std	Y+24, r30	; 0x18
     17d0:	f6 e0       	ldi	r31, 0x06	; 6
-    17d2:	f8 a3       	std	Y+32, r31	; 0x20
-    17d4:	ee 8d       	ldd	r30, Y+30	; 0x1e
-    17d6:	ff 8d       	ldd	r31, Y+31	; 0x1f
+    17d2:	fa 8f       	std	Y+26, r31	; 0x1a
+    17d4:	e8 8d       	ldd	r30, Y+24	; 0x18
+    17d6:	f9 8d       	ldd	r31, Y+25	; 0x19
     17d8:	00 80       	ld	r0, Z
-    17da:	8e 8d       	ldd	r24, Y+30	; 0x1e
-    17dc:	9f 8d       	ldd	r25, Y+31	; 0x1f
+    17da:	88 8d       	ldd	r24, Y+24	; 0x18
+    17dc:	99 8d       	ldd	r25, Y+25	; 0x19
     17de:	01 96       	adiw	r24, 0x01	; 1
-    17e0:	9f 8f       	std	Y+31, r25	; 0x1f
-    17e2:	8e 8f       	std	Y+30, r24	; 0x1e
-    17e4:	ec 8d       	ldd	r30, Y+28	; 0x1c
-    17e6:	fd 8d       	ldd	r31, Y+29	; 0x1d
+    17e0:	99 8f       	std	Y+25, r25	; 0x19
+    17e2:	88 8f       	std	Y+24, r24	; 0x18
+    17e4:	ee 89       	ldd	r30, Y+22	; 0x16
+    17e6:	ff 89       	ldd	r31, Y+23	; 0x17
     17e8:	00 82       	st	Z, r0
-    17ea:	8c 8d       	ldd	r24, Y+28	; 0x1c
-    17ec:	9d 8d       	ldd	r25, Y+29	; 0x1d
+    17ea:	8e 89       	ldd	r24, Y+22	; 0x16
+    17ec:	9f 89       	ldd	r25, Y+23	; 0x17
     17ee:	01 96       	adiw	r24, 0x01	; 1
-    17f0:	9d 8f       	std	Y+29, r25	; 0x1d
-    17f2:	8c 8f       	std	Y+28, r24	; 0x1c
-    17f4:	98 a1       	ldd	r25, Y+32	; 0x20
+    17f0:	9f 8b       	std	Y+23, r25	; 0x17
+    17f2:	8e 8b       	std	Y+22, r24	; 0x16
+    17f4:	9a 8d       	ldd	r25, Y+26	; 0x1a
     17f6:	91 50       	subi	r25, 0x01	; 1
-    17f8:	98 a3       	std	Y+32, r25	; 0x20
-    17fa:	e8 a1       	ldd	r30, Y+32	; 0x20
+    17f8:	9a 8f       	std	Y+26, r25	; 0x1a
+    17fa:	ea 8d       	ldd	r30, Y+26	; 0x1a
     17fc:	ee 23       	and	r30, r30
     17fe:	51 f7       	brne	.-44     	; 0x17d4 <main+0x28>
 	u8 len = 6;
@@ -3499,7 +3499,7 @@ TWI_masterTransmit(buffer, len, EEPROM_ADDRESS);
     181e:	28 2f       	mov	r18, r24
     1820:	30 e0       	ldi	r19, 0x00	; 0
     1822:	ce 01       	movw	r24, r28
-    1824:	46 96       	adiw	r24, 0x16	; 22
+    1824:	40 96       	adiw	r24, 0x10	; 16
     1826:	b9 01       	movw	r22, r18
     1828:	40 e5       	ldi	r20, 0x50	; 80
     182a:	0e 94 c5 08 	call	0x118a	; 0x118a <TWI_masterTransmit>
