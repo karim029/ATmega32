@@ -36,10 +36,10 @@ void eepromWriteByte(u16 copy_u16_Address, u8 copy_u8_Data){
 	EEDR = copy_u8_Data;
 
 	//Enable EEprom Master Write
-	EECR |= (1<<EEMWE);
+	EECR = (1<<EEMWE);
 
 	//enable Eeprom Write within 4 clock cycles
-	EECR |= (1<<EEWE);
+	EECR = (1<<EEWE);
 
 }
 
