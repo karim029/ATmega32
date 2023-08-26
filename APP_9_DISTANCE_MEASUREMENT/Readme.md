@@ -8,6 +8,9 @@ This module contains an Ultrasonic Distance Measurement Application implemented 
 - Measures distances using the HC-SR04 ultrasonic sensor.
 - Displays distance (cm) readings on an LCD screen.
 
+
+![Simulation overview](image/Proteus_image.png)
+
 ## Calculation
 
 ````txt
