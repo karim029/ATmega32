@@ -113,7 +113,6 @@
 /* FUNCTIONS DECLARATIONS */
 
 void Timer_set_Callback_Func(u8 timer_type,void(*ptr_to_callback)(void));
-
 // TIMER 0 FUNCTIONS //
 
 void TMR0_loadTCNT0(u8 value);
@@ -132,7 +131,7 @@ void TMR1_ICU_Enable(u8 copy_u8_edge_select);
 void TMR1_ICU_Disable();
 u16 TMR1_ICU_read();
 void TMR1_ICU_Set_TCNT1(u16 value);
-
+void TMR1_Clear_value();
 
 // TIMER 2 FUNCTIONS //
 void TMR2_loadTCNT2(u8 value);

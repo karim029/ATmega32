@@ -595,21 +595,34 @@ void TMR1_Init(){
 
 void TMR1_ICU_Enable(u8 copy_u8_edge_select){
 
-	switch(copy_u8_edge_select){
+	static u8 state = 0;
 
-	case ICU_FALLING_EDGE:
-		clear_Bit(TCCR1B,ICES1); // select falling edge for icu
-		set_Bit(TCCR1B,ICNC1); // enable noise canceling
-		break;
+		if(state == 0){
+		//set icp1 pin to input
+		DIO_void_set_pin_dir(PORTD, PIN6, INPUT);
+		state = 1;
+		}
+		switch(copy_u8_edge_select){
 
-	case ICU_RISING_EDGE:
-		set_Bit(TCCR1B,ICES1); // select rising edge for icu
-		set_Bit(TCCR1B,ICNC1); // enable noise canceling
-		break;
+		case ICU_FALLING_EDGE:
+			clear_Bit(TCCR1B,ICES1); // select falling edge for icu
+			set_Bit(TCCR1B,ICNC1); // enable noise canceling
+			break;
+
+		case ICU_RISING_EDGE:
+			set_Bit(TCCR1B,ICES1); // select rising edge for icu
+			set_Bit(TCCR1B,ICNC1); // enable noise canceling
+			break;
 
 
-	}
+		}
 }
+
+void TMR1_Clear_value(){
+
+	TCNT1 = 0;
+}
+
 
 void TMR1_ICU_Disable(){
 
