@@ -9,7 +9,7 @@ This module contains an Ultrasonic Distance Measurement Application implemented 
 - Displays distance (cm) readings on an LCD screen.
 
 
-![Simulation overview](image/Proteus_image.png)
+![Simulation overview](Image/Proteus_image.png)
 
 ## Calculation
 
