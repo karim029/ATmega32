@@ -94,7 +94,7 @@ void UART_Init();
 void Parity_mode();
 void char_size_select();
 void UART_Transmit_String(u8* copy_string);
-void UART_Receive_String(u8* arr);
+void UART_Receive_String(u8* arr,u8 size);
 
 
 #endif /* UART_INTERFACE_H_ */

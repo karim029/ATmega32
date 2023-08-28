@@ -46,7 +46,7 @@ Use `UART_Transmit_char(u8 data)` function to transmit a single character throug
 
 ### Receiving a String Using Callbacks
 
-To receive a string, use `UART_Receive_String(u8* arr)`. This function receives a string of characters through UART and stores it in the provided array.
+To receive a string, use `UART_Receive_String(u8* arr,u8 size)`. This function receives a string of characters through UART and stores it in the provided array and taking care of the size of the data
 
 ````c
 #include "UART_Interface.h"

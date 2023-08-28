@@ -191,21 +191,22 @@ void UART_Transmit_String(u8* copy_string){
 
 }
 
-void UART_Receive_String(u8* arr){
+void UART_Receive_String(u8* arr,u8 size){
+	u8 i = 0;
+	u8 receivedChar;
 
-	u8 i =0;
 
+	do{
 
-		arr[i] = UART_Receive_char();
+		receivedChar = UART_Receive_char();
 
-	while(arr[i]){
+		arr[i] = receivedChar;
 
-		arr[i] = UART_Receive_char();
 		i++;
 
+	}while(i <size-1);
 
-	}
-
+	arr[i] = '\0';
 
 
 
