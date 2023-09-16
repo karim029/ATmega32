@@ -161,7 +161,7 @@ void TMR0_mode(){
 	set_Bit(TCCR0,WGM01);
 	clear_Bit(TCCR0,WGM00);
 
-#elif TMR0 == FAST_PWM
+#elif TMR0_MODE == FAST_PWM
 
 	set_Bit(TCCR0,WGM00);
 	set_Bit(TCCR0,WGM01);
@@ -265,36 +265,36 @@ void TMR1_mode(){
 
 	clear_Bit(TCCR1A,WGM10);
 	clear_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM12);
-	clear_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_PWM_PC_8BIT
 
 	set_Bit(TCCR1A,WGM10);
 	clear_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM12);
-	clear_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_PWM_PC_9BIT
 
 	set_Bit(TCCR1A,WGM11);
 	clear_Bit(TCCR1A,WGM10);
-	clear_Bit(TCCR1A,WGM12);
-	clear_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_PWM_PC_10BIT
 
 	set_Bit(TCCR1A,WGM10);
 	set_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM12);
-	clear_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_CTC_OCR_TOP
 
 	set_Bit(TCCR1A,WGM12);
 	clear_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM10);
-	clear_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM10);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_FAST_PWM_8BIT
 
@@ -307,65 +307,65 @@ void TMR1_mode(){
 
 	set_Bit(TCCR1A,WGM11);
 	clear_Bit(TCCR1A,WGM10);
-	set_Bit(TCCR1A,WGM12);
-	clear_Bit(TCCR1A,WGM13);
+	set_Bit(TCCR1B,WGM12);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_FAST_PWM_10BIT
 
 	set_Bit(TCCR1A,WGM11);
 	set_Bit(TCCR1A,WGM10);
-	set_Bit(TCCR1A,WGM12);
-	clear_Bit(TCCR1A,WGM13);
+	set_Bit(TCCR1B,WGM12);
+	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_PC_FC_ICR
 
 	clear_Bit(TCCR1A,WGM11);
 	clear_Bit(TCCR1A,WGM10);
-	clear_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_PC_FC_OCR
 
 	set_Bit(TCCR1A,WGM10);
 	clear_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 
 #elif TMR1_MODE == TMR1_PWM_PC_ICR
 
 	clear_Bit(TCCR1A,WGM10);
 	set_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_PWM_PC_OCR
 
 	set_Bit(TCCR1A,WGM10);
 	set_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	clear_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_CTC_ICR_TOP
 
 	clear_Bit(TCCR1A,WGM10);
 	clear_Bit(TCCR1A,WGM11);
-	set_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	set_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_FAST_PWM_ICR
 
 	clear_Bit(TCCR1A,WGM10);
 	set_Bit(TCCR1A,WGM11);
-	set_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	set_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_FAST_PWM_OCR
 
 	set_Bit(TCCR1A,WGM10);
 	set_Bit(TCCR1A,WGM11);
-	set_Bit(TCCR1A,WGM12);
-	set_Bit(TCCR1A,WGM13);
+	set_Bit(TCCR1B,WGM12);
+	set_Bit(TCCR1B,WGM13);
 
 
 
@@ -657,20 +657,20 @@ void __vector_6(){
 
 }
 
-// ISR for timer1 on compare channel B
+// ISR for timer1 on compare channel A
 void __vector_7(){
 
-	if(callback_func[TIMER1_COMPB] != NULL){
+	if(callback_func[TIMER1_COMPA] != NULL){
 
-			callback_func[TIMER1_COMPB]();
+			callback_func[TIMER1_COMPA]();
 
 		}
 
 }
-//ISR for timer1 on compare channel A
+//ISR for timer1 on compare channel B
 void __vector_8(){
 
-	if(callback_func[TIMER1_COMPA] != NULL){
+	if(callback_func[TIMER1_COMPB] != NULL){
 
 			callback_func[TIMER1_COMPA]();
 
