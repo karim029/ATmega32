@@ -14,8 +14,8 @@
 #define TIMER0_OVF      0   // Timer/Counter0 Overflow Interrupt
 #define TIMER0_COMP     1   // Timer/Counter0 Compare Match Interrupt
 #define TIMER1_OVF      2   // Timer/Counter1 Overflow Interrupt
-#define TIMER1_COMPB    3   // Timer/Counter1 Match A Compare Match Interrupt
-#define TIMER1_COMPA    4   // Timer/Counter1 Match B Compare Match Interrupt
+#define TIMER1_COMPA    3   // Timer/Counter1 Match A Compare Match Interrupt
+#define TIMER1_COMPB    4   // Timer/Counter1 Match B Compare Match Interrupt
 #define TIMER1_ICU		5
 #define TIMER2_OVF      6   // Timer/Counter2 Overflow Interrupt
 #define TIMER2_COMP     7   // Timer/Counter2 Compare Match Interrupt
