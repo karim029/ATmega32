@@ -37,18 +37,16 @@ static void array_Swap(u8* copy_pu8_arr, u8 copy_length){
 	 */
 
 
-	u8 start = 0;
-	u8 end = copy_length - 1;
+	 u8 start = 0;
+	    u8 end = copy_length - 1;
 
-	while(start < end){
-
-		u8 temp = copy_pu8_arr[start];
-		copy_pu8_arr[start] = copy_pu8_arr[end];
-		copy_pu8_arr[end] = temp;
-
-		start++;
-		end--;
-	}
+	    while (start < end) {
+	        u8 temp = copy_pu8_arr[start];
+	        copy_pu8_arr[start] = copy_pu8_arr[end];
+	        copy_pu8_arr[end] = temp;
+	        start++;
+	        end--;
+	    }
 
 
 
@@ -79,7 +77,7 @@ s32 power_10(u8 power){
 
 /* 8bit mode functions */
 
-
+#if LCD_interface_mode == interface_8bit
 static void LCD_write_data_8bit(u8 copy_data_8bit){
 	/*
 	 *  Function set up the control pins and the sequence to write data in the data register
@@ -131,10 +129,10 @@ static void LCD_write_command_8bit(u8 copy_command_8bit){
 	DIO_void_clear_pin(lcd_control_port, lcd_enable);
 
 }
-
+#endif
 
 /* 4bit mode functions */
-
+#if LCD_interface_mode == interface_4bit
 static void LCD_write_data_4bit(u8 copy_data_4bit){
 
 
@@ -269,51 +267,29 @@ static void LCD_function_Set_4bit(){
 			 *  do you not use it in your code!
 			 *
 			 */
+	 u8 data[] = { 0b0010, 0b0010, 0b1000 };
+
+	    DIO_void_clear_pin(lcd_control_port, lcd_RS);
+	    DIO_void_clear_pin(lcd_control_port, lcd_RW);
+	    _delay_us(1);
+
+	    for (u8 step = 0; step < 3; step++) {
+	        DIO_void_set_pin(lcd_control_port, lcd_enable);
+	        _delay_us(1);
+
+	        for (u8 i = 0; i < 4; i++) {
+	            DIO_void_assign_pin(lcd_data_port, i + 4, get_Bit(data[step], i));
+	        }
+
+	        DIO_void_clear_pin(lcd_control_port, lcd_enable);
+	        _delay_us(10);
+	    }
 
 
-
-	DIO_void_clear_pin(lcd_control_port, lcd_RS);// RS:0 to select instruction register
-	DIO_void_clear_pin(lcd_control_port, lcd_RW);// RW:0 write operation
-	_delay_us(1);
-	DIO_void_set_pin(lcd_control_port, lcd_enable); // enable high
-	_delay_us(1);
-	//send the high nibble
-
-	for(u8 i=0; i<4;i++){
-
-		DIO_void_assign_pin(lcd_data_port, i+4, get_Bit(0b0010,i));
-	}
-	//enable pin low
-	DIO_void_clear_pin(lcd_control_port, lcd_enable);
-	_delay_us(10);
-	//send again high nibble to make sure
-	DIO_void_set_pin(lcd_control_port, lcd_enable); // enable high
-	_delay_us(1);
-	//send the high nibble
-
-	for(u8 i=0; i<4;i++){
-
-		DIO_void_assign_pin(lcd_data_port, i+4, get_Bit(0b0010,i));
-	}
-	//enable pin low
-	DIO_void_clear_pin(lcd_control_port, lcd_enable);
-	_delay_us(10);
-	//send the low nibble
-	DIO_void_set_pin(lcd_control_port, lcd_enable); // enable high
-	_delay_us(1);
-	//send the high nibble
-
-	for(u8 i=0; i<4;i++){
-
-		DIO_void_assign_pin(lcd_data_port, i+4, get_Bit(0b1000,i));
-	}
-	//enable pin low
-	DIO_void_clear_pin(lcd_control_port, lcd_enable);
-	_delay_us(10);
 
 }
 
-
+#endif
 
 /* Driver features functions for the user */
 
