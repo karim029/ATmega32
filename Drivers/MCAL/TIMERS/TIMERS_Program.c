@@ -291,9 +291,10 @@ void TMR1_mode(){
 
 #elif TMR1_MODE == TMR1_CTC_OCR_TOP
 
-	set_Bit(TCCR1A,WGM12);
+
+	clear_Bit(TCCR1A,WGM10);
 	clear_Bit(TCCR1A,WGM11);
-	clear_Bit(TCCR1B,WGM10);
+	set_Bit(TCCR1B,WGM12);
 	clear_Bit(TCCR1B,WGM13);
 
 #elif TMR1_MODE == TMR1_FAST_PWM_8BIT
@@ -565,6 +566,7 @@ void TMR1_Init(){
 	TMR1_prescallar();
 
 	ICR1 = TMR1_ICR_VALUE;
+
 
 #if TMR1_OVF_INTERRUPT == ENABLE
 
