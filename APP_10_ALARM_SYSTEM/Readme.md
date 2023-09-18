@@ -16,6 +16,10 @@ This is a simple alarm clock project implemented on the ATmega32 microcontroller
 
 This project demonstrates the use of an ATmega32 microcontroller to create a digital alarm clock. The system includes features such as time adjustment, alarm activation/deactivation, and a buzzer for alarms. The project is written in C and can serve as a foundation for more advanced embedded systems.
 
+### Project Image
+
+![Simulation](image/simulation.png)
+
 ## Features
 
 - Real-time clock (RTC) functionality.
